@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @tour.type %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @tour.tel %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @tour.mail %>
+</p>
+
+<p>
+  <strong>Contactp:</strong>
+  <%= @tour.contactp %>
+</p>
+
+<p>
+  <strong>Contactt:</strong>
+  <%= @tour.contactt %>
+</p>
+
+<p>
+  <strong>Pavg:</strong>
+  <%= @tour.pavg %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>

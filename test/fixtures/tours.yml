@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  tel: MyString
+  mail: MyString
+  contactp: MyString
+  contactt: MyString
+  pavg: MyString
+
+two:
+  type: 
+  tel: MyString
+  mail: MyString
+  contactp: MyString
+  contactt: MyString
+  pavg: MyString

@@ -1,0 +1,39 @@
+<h1>Listing night_lives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Tel</th>
+      <th>Mail</th>
+      <th>Contactp</th>
+      <th>Contactt</th>
+      <th>Pavg</th>
+      <th>Promo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @night_lives.each do |night_life| %>
+      <tr>
+        <td><%= night_life.type %></td>
+        <td><%= night_life.tel %></td>
+        <td><%= night_life.mail %></td>
+        <td><%= night_life.contactp %></td>
+        <td><%= night_life.contactt %></td>
+        <td><%= night_life.pavg %></td>
+        <td><%= night_life.promo %></td>
+        <td><%= link_to 'Show', night_life %></td>
+        <td><%= link_to 'Edit', edit_night_life_path(night_life) %></td>
+        <td><%= link_to 'Destroy', night_life, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Night life', new_night_life_path %>

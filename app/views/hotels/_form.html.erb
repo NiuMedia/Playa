@@ -1,0 +1,53 @@
+<%= form_for(@hotel) do |f| %>
+  <% if @hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+      <% @hotel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br>
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :mail %><br>
+    <%= f.text_field :mail %>
+  </div>
+  <div class="field">
+    <%= f.label :contactp %><br>
+    <%= f.text_field :contactp %>
+  </div>
+  <div class="field">
+    <%= f.label :contactt %><br>
+    <%= f.text_field :contactt %>
+  </div>
+  <div class="field">
+    <%= f.label :pta %><br>
+    <%= f.text_field :pta %>
+  </div>
+  <div class="field">
+    <%= f.label :ptb %><br>
+    <%= f.text_field :ptb %>
+  </div>
+  <div class="field">
+    <%= f.label :pavg %><br>
+    <%= f.text_field :pavg %>
+  </div>
+  <div class="field">
+    <%= f.label :stars %><br>
+    <%= f.text_field :stars %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

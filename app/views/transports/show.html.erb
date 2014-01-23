@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @transport.type %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @transport.tel %>
+</p>
+
+<p>
+  <strong>Cel:</strong>
+  <%= @transport.cel %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @transport.mail %>
+</p>
+
+<p>
+  <strong>Contactp:</strong>
+  <%= @transport.contactp %>
+</p>
+
+<p>
+  <strong>Contactt:</strong>
+  <%= @transport.contactt %>
+</p>
+
+<%= link_to 'Edit', edit_transport_path(@transport) %> |
+<%= link_to 'Back', transports_path %>

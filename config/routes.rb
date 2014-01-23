@@ -1,9 +1,34 @@
 Playa::Application.routes.draw do
+  resources :services
+
+  resources :activities
+
+  resources :schedules
+
+  resources :tours
+
+  resources :events
+
+  resources :night_lives
+
+  resources :shoppings
+
+  resources :transports
+
+  resources :locations
+
+  resources :restaurants
+
+  resources :hotels
+
+  devise_for :venues
+  devise_for :admins
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root :to => "services#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

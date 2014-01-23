@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @shopping.type %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @shopping.tel %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @shopping.mail %>
+</p>
+
+<p>
+  <strong>Contactp:</strong>
+  <%= @shopping.contactp %>
+</p>
+
+<p>
+  <strong>Contactt:</strong>
+  <%= @shopping.contactt %>
+</p>
+
+<p>
+  <strong>Products:</strong>
+  <%= @shopping.products %>
+</p>
+
+<%= link_to 'Edit', edit_shopping_path(@shopping) %> |
+<%= link_to 'Back', shoppings_path %>

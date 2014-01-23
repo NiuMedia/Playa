@@ -1,0 +1,37 @@
+<h1>Listing transports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Tel</th>
+      <th>Cel</th>
+      <th>Mail</th>
+      <th>Contactp</th>
+      <th>Contactt</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transports.each do |transport| %>
+      <tr>
+        <td><%= transport.type %></td>
+        <td><%= transport.tel %></td>
+        <td><%= transport.cel %></td>
+        <td><%= transport.mail %></td>
+        <td><%= transport.contactp %></td>
+        <td><%= transport.contactt %></td>
+        <td><%= link_to 'Show', transport %></td>
+        <td><%= link_to 'Edit', edit_transport_path(transport) %></td>
+        <td><%= link_to 'Destroy', transport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transport', new_transport_path %>

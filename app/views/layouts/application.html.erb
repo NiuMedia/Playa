@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Playa</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "Playa" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  	<nav class="top-bar" data-topbar>
+		<div class="navbar-inner">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="#">Playa</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+			</ul>
+			<section class="top-bar-section">
+				<ul class="right">
+					<% if admin_signed_in? %>
+						<li class="has-form show-for-large-up"><%= link_to "Log out", destroy_admin_session_path, method: :delete, :class => 'alert button' %></li>
+					<% else %>
+						<li><%= link_to "Register", new_admin_registration_path %></li>
+						<li class="has-form show-for-large-up"><%= link_to "Log in", new_admin_session_path, :class => 'button' %></li>
+					<% end %>
+				</ul>
+			</section>
+		</div>
+	</nav>
+	<section role="main">
+		<div class="row">
+
+    <%= yield %>
+
+    	</div>
+	</section>
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div id="footer">
+    	<div class="row">
+	    	<p class="left">Playa © 2014 Todos los derechos reservados.</p>
+	    	<p class="right">Sitio desarrollado por <a href="http://niumedia.mx">Niumedia</a></p>
+	    </div>
+    </div>
+    <%= javascript_include_tag "application" %>
+    <script type="text/javascript">
+    $(window).bind("load", function () {
+	    var footer = $("#footer");
+	    var pos = footer.position();
+	    var height = $(window).height();
+	    height = height - pos.top;
+	    height = height - footer.height();
+	    if (height > 0) {
+	        footer.css({
+	            'margin-top': height + 'px'
+	        });
+	    }
+	});
+    </script>
+  </body>
 </html>
